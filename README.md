@@ -43,6 +43,19 @@ bindIndexToActionCreators(doToggleColor, index)
 
 ```
 
+reducer handler
+```
+  function doToggleColorHandler(state, action) {
+    const { index } = action;
+
+    const newColors = [...state.colors];
+    newColors[index].isSelected = !newColors[index].isSelected;
+
+    return { ...state, colors: newColors };
+  }
+
+```
+
 License
 ----
 
