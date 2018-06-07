@@ -1,0 +1,39 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true,
+        "jest": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true
+        },
+        "sourceType": "module"
+    },
+    "rules": {
+        "no-const-assign": "warn",
+        "no-this-before-super": "warn",
+        "no-undef": "warn",
+        "no-unreachable": "warn",
+        "no-unused-vars": "warn",
+        "no-duplicate-imports" : "warn",
+        "constructor-super": "warn",
+        "valid-typeof": "warn",
+        "import/no-unresolved": [2, {"commonjs": true, "amd": true}],
+        "semi" : "warn",
+        "quotes" : ["warn", "single", { "avoidEscape": true }],
+        "indent": ["warn", 2],
+        "no-useless-constructor": "warn",
+        "no-var" : "error",
+        "prefer-const" : "warn",
+        "block-spacing" : ["warn", "always"],
+        "rest-spread-spacing" : ["warn", "never"],
+        "camelcase" : "warn"
+    },
+   "plugins": [
+     "import"
+   ]
+}

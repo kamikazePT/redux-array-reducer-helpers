@@ -1,0 +1,11 @@
+#Node modules folder
+node_modules
+
+#log files
+*.log
+
+#map files
+*.map
+
+#binaries
+lib

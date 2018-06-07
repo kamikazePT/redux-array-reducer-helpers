@@ -1,0 +1,49 @@
+{
+  "name": "redux-array-reducer-helpers",
+  "version": "1.0.0",
+  "description": "redux helpers for arrays in reducers",
+  "main": "./lib/index.js",
+  "repository": "https://github.com/kamikazePT/redux-array-reducer-helpers",
+  "author": "Afonso Santos aka kamikazePT",
+  "license": "MIT",
+  "scripts": {
+    "lint": "node_modules\\.bin\\eslint . --ext .js",
+    "compile": "node node_modules\\babel-cli\\bin\\babel.js src --out-dir lib",
+    "compile:debug": "node node_modules\\babel-cli\\bin\\babel.js src --out-dir lib --source-maps",
+    "compile:watch": "node node_modules\\babel-cli\\bin\\babel.js src --out-dir lib --source-maps --watch",
+    "precommit": "yarn install && yarn test && yarn lint && yarn compile",
+    "test": "node_modules\\.bin\\jest",
+    "test:debug": "node --inspect-brk node_modules\\jest\\bin\\jest.js --runInBand",
+    "test:watch": "yarn test -- --watch"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "testRegex": "(\\.(test|spec))\\.(js)$",
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "verbose": true
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "stage-0"
+    ]
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "jest": "^23.1.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-import": "^2.12.0"
+  }
+}

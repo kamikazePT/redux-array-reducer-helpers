@@ -1,0 +1,1 @@
+export {default as bindIndexToActionCreators} from './binders/bind_index_to_action_creators';
