@@ -6,7 +6,15 @@ node_modules
 
 #tests
 __tests__
+
+#dev files
 src
+.gitignore
+.npmignore
+.gitattributes
+.eslintignore
+.eslintrc.json
+yarn.lock
 
 #map files
 *.map
