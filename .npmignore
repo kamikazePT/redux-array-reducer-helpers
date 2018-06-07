@@ -4,5 +4,8 @@ node_modules
 #log files
 *.log
 
+#tests
+__tests__
+
 #map files
 *.map

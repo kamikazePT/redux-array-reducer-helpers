@@ -22,7 +22,7 @@
         "no-duplicate-imports" : "warn",
         "constructor-super": "warn",
         "valid-typeof": "warn",
-        "import/no-unresolved": [2, {"commonjs": true, "amd": true}],
+        "import/no-unresolved": [2, {"commonjs": true, "amd": true, "ignore": ["@/(.*)$"]}],
         "semi" : "warn",
         "quotes" : ["warn", "single", { "avoidEscape": true }],
         "indent": ["warn", 2],
@@ -33,7 +33,7 @@
         "rest-spread-spacing" : ["warn", "never"],
         "camelcase" : "warn"
     },
-   "plugins": [
-     "import"
-   ]
+    "plugins": [
+      "import"
+    ]
 }

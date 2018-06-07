@@ -1,5 +1,9 @@
-describe('Empty suite because jest doesn\'t support 0 tests... soon to be made', () => {
-  it('It should just pass', () => {
-    expect(true).toBe(true);
+import bindIndexToActionCreators from '@/binders/bind_index_to_action_creators';
+
+describe('simple action creators', () => {
+  it('It should inject index property', () => {
+    const actionCreator = {
+      type : 'TEST_ACTION'
+    };
   });
 });

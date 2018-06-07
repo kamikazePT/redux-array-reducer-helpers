@@ -6,6 +6,13 @@
   "repository": "https://github.com/kamikazePT/redux-array-reducer-helpers",
   "author": "Afonso Santos aka kamikazePT",
   "license": "MIT",
+  "keywords": [
+    "array",
+    "reducer",
+    "redux",
+    "index",
+    "injection"
+  ],
   "scripts": {
     "lint": "node_modules\\.bin\\eslint . --ext .js",
     "compile": "node node_modules\\babel-cli\\bin\\babel.js src --out-dir lib",
@@ -24,6 +31,12 @@
     "moduleFileExtensions": [
       "js"
     ],
+    "moduleNameMapper": {
+      "@/(.*)$": "<rootDir>/src/$1"
+    },
+    "moduleDirectories": [
+      "node_modules"
+    ],
     "verbose": true
   },
   "babel": {
@@ -36,14 +49,14 @@
     "lodash": "^4.17.10"
   },
   "devDependencies": {
-    "husky": "^0.14.3",
-    "jest": "^23.1.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.19.1",
-    "eslint-plugin-import": "^2.12.0"
+    "eslint-plugin-import": "^2.12.0",
+    "husky": "^0.14.3",
+    "jest": "^23.1.0"
   }
 }
