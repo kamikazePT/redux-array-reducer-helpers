@@ -1,6 +1,6 @@
 {
   "name": "redux-reducer-array-helpers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "redux helpers for arrays in reducers",
   "main": "./lib/index.js",
   "repository": "https://github.com/kamikazePT/redux-reducer-array-helpers",
