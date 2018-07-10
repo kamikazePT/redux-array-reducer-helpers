@@ -6,14 +6,14 @@ describe('simple action creators', () => {
       type : 'TEST_ACTION'
     });
 
-    const indexToInject = 2;
+    const index = 2;
 
     const expectedAction = {
       type : 'TEST_ACTION',
-      index : indexToInject
+      payload : { index }
     };
 
-    const boundActionCreator = bindIndexToActionCreators(actionCreator, indexToInject);
+    const boundActionCreator = bindIndexToActionCreators(actionCreator, index);
 
     expect(boundActionCreator()).toEqual(expectedAction);
   });

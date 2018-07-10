@@ -1,27 +1,31 @@
 import { mapValues } from 'lodash';
 
-const bindActionCreator = (actionCreator, index) => 
-  (...args) => {
+function mapIndexToActionPayload(action, index){
+  return {...action, payload : {...action.payload, index}};
+}
+
+function bindActionCreator(actionCreator, index){
+  return (...args) => {
     const result = actionCreator(...args);
 
     if(typeof result === 'function'){
       return (dispatch, ...resultArgs) => {
-        const newDispatch = action => dispatch({...action, index});
+        const newDispatch = action => dispatch(mapIndexToActionPayload(action, index));
 
         return result(newDispatch, ...resultArgs);
       };
     }
 
-    return {...result, index };
+    return mapIndexToActionPayload(result, index);
   };
+}
 
-const bindActionCreatorMap = (creators, index) =>
-  mapValues(creators, actionCreator => bindActionCreator(actionCreator, index));
+function bindActionCreatorMap(creators, index){
+  return mapValues(creators, actionCreator => bindActionCreator(actionCreator, index));
+}
 
-const bindIndexToActionCreators = (actionCreators, index) => {
+export default function(actionCreators, index){
   return typeof actionCreators === 'function'
     ? bindActionCreator(actionCreators, index)
     : bindActionCreatorMap(actionCreators, index);
 };
-
-export default bindIndexToActionCreators;

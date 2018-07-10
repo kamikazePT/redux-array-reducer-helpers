@@ -1,9 +1,10 @@
 {
   "name": "redux-reducer-array-helpers",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "redux helpers for arrays in reducers",
   "main": "./lib/index.js",
-  "repository": "https://github.com/kamikazePT/redux-reducer-array-helpers",
+  "repository": "github:kamikazePT/redux-reducer-array-helpers",
+  "homepage": "https://github.com/kamikazePT/redux-reducer-array-helpers#readme",
   "author": "Afonso Santos aka kamikazePT",
   "license": "MIT",
   "keywords": [
@@ -18,7 +19,8 @@
     "compile": "node node_modules\\babel-cli\\bin\\babel.js src --out-dir lib",
     "compile:debug": "node node_modules\\babel-cli\\bin\\babel.js src --out-dir lib --source-maps",
     "compile:watch": "node node_modules\\babel-cli\\bin\\babel.js src --out-dir lib --source-maps --watch",
-    "precommit": "yarn install && yarn test && yarn lint && yarn compile",
+    "precommit": "yarn test && yarn lint && yarn compile",
+    "prepublish": "yarn precommit",
     "test": "node_modules\\.bin\\jest",
     "test:debug": "node --inspect-brk node_modules\\jest\\bin\\jest.js --runInBand",
     "test:watch": "yarn test -- --watch"
@@ -42,7 +44,8 @@
   "babel": {
     "presets": [
       "env",
-      "stage-0"
+      "stage-0",
+      "flow"
     ]
   },
   "dependencies": {
@@ -53,9 +56,11 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.19.1",
     "eslint-plugin-import": "^2.12.0",
+    "flow-bin": "^0.74.0",
     "husky": "^0.14.3",
     "jest": "^23.1.0"
   }

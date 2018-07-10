@@ -10,6 +10,7 @@ __tests__
 #dev files
 src
 .gitignore
+.flowconfig
 .npmignore
 .gitattributes
 .eslintignore

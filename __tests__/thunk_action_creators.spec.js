@@ -11,26 +11,26 @@ describe('thunk action creators', () => {
         dispatch({
           type : 'TEST_ACTION_TWO'
         });
-      }
-    }
+      };
+    };
 
-    const indexToInject = 2;
+    const index = 2;
 
     const expectedActions = [
       {
         type : 'TEST_ACTION_ONE',
-        index : indexToInject
+        payload : { index }
       },
       {
         type : 'TEST_ACTION_TWO',
-        index : indexToInject
+        payload : { index }
       }
     ];
 
     let currentIdx = 0;
     const assertDispatch = (action) => expect(action).toEqual(expectedActions[currentIdx++]);
 
-    const boundActionCreator = bindIndexToActionCreators(thunkActionCreator, indexToInject);
+    const boundActionCreator = bindIndexToActionCreators(thunkActionCreator, index);
 
     boundActionCreator()(assertDispatch);
   });
