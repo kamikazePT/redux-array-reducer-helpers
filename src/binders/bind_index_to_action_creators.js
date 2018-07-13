@@ -1,14 +1,24 @@
-import { mapValues } from 'lodash';
+import { mapValues, isFunction, isPlainObject } from 'lodash';
+
+function appendIndex(currentNode, index){
+  if(!currentNode) return index;
+  if(!isPlainObject(currentNode)) return { value : currentNode, nextIndex : index};
+  
+  return {...currentNode, nextIndex : appendIndex(currentNode.nextIndex, index)};
+}
 
 function mapIndexToActionPayload(action, index){
-  return {...action, payload : {...action.payload, index}};
+  const payload = {...action.payload};
+  payload.index = appendIndex(payload.index, index);
+
+  return {...action, payload : payload};
 }
 
 function bindActionCreator(actionCreator, index){
   return (...args) => {
     const result = actionCreator(...args);
 
-    if(typeof result === 'function'){
+    if(isFunction(result)){
       return (dispatch, ...resultArgs) => {
         const newDispatch = action => dispatch(mapIndexToActionPayload(action, index));
 
@@ -25,7 +35,7 @@ function bindActionCreatorMap(creators, index){
 }
 
 export default function(actionCreators, index){
-  return typeof actionCreators === 'function'
+  return isFunction(actionCreators)
     ? bindActionCreator(actionCreators, index)
     : bindActionCreatorMap(actionCreators, index);
 };

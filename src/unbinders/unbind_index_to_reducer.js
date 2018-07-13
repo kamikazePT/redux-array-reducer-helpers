@@ -1,13 +1,12 @@
-import { isArray } from 'lodash';
-
-function getIndex({ payload }){
-  const { index } = payload;
-  return isArray(index) ? index : [ index ];
-}
+import { isPlainObject } from 'lodash';
 
 export default function(reducer){
   return (state, action) => {
-    const [index, ...nextIndexes] = getIndex(action);
-    return reducer(state[index], {...action, payload: {...action.payload, index: nextIndexes}});
+    const { index } = action.payload;
+    const isNested = isPlainObject(index);
+    const curIndex = isNested ? index.value : index;
+    const nextIndex = isNested ? index.nextIndex : undefined;
+
+    return reducer(state[curIndex], {...action, payload: {...action.payload, index: nextIndex}});
   };
 };
