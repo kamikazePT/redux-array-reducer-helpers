@@ -1,3 +1,5 @@
+[![Inline docs](http://inch-ci.org/github/kamikazePT/redux-reducer-array-helpers.svg?branch=master)](http://inch-ci.org/github/kamikazePT/redux-reducer-array-helpers)
+
 ### Installation
 
 install 
