@@ -1,14 +1,9 @@
 ### Installation
 
-using npm
+install 
 
 ```sh
-$ npm i redux-array-reducer-helpers
-```
-
-using yarn
-
-```sh
+$ npm i redux-array-reducer-helpers 
 $ yarn add redux-array-reducer-helpers
 ```
 
@@ -43,13 +38,14 @@ bindIndexToActionCreators(doToggleColor, index)
 
 ```
 
-reducer handler
+color list reducer handler
 ```
+import { unbindIndexToReducer } from 'redux-array-reducer-helpers'
+
   function doToggleColorHandler(state, action) {
     const { index } = action;
 
-    const newColors = [...state.colors];
-    newColors[index].isSelected = !newColors[index].isSelected;
+    const newColors = unbindIndexToReducer(colorItemReducer)([...state.colors], action);
 
     return { ...state, colors: newColors };
   }

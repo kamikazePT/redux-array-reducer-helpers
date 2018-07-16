@@ -1,15 +1,14 @@
-import { mapValues, isFunction, isPlainObject } from 'lodash';
+import { mapValues, isFunction } from 'lodash';
 
 function appendIndex(currentNode, index){
-  if(!currentNode) return index;
-  if(!isPlainObject(currentNode)) return { value : currentNode, nextIndex : index};
+  if(!currentNode.index) return {...currentNode, index};
+  if(!currentNode.nextIndex) return { ...currentNode, nextIndex : { index }};
   
   return {...currentNode, nextIndex : appendIndex(currentNode.nextIndex, index)};
 }
 
 function mapIndexToActionPayload(action, index){
-  const payload = {...action.payload};
-  payload.index = appendIndex(payload.index, index);
+  const payload = appendIndex({...action.payload}, index);
 
   return {...action, payload : payload};
 }

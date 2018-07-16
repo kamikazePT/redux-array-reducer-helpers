@@ -35,9 +35,9 @@ describe('unbindIndexToReducer', () => {
     const action = {
       type : 'TEST_ACTION',
       payload : {
-        index : {
-          value : index,
-          nextIndex
+        index,
+        nextIndex : {
+          index : nextIndex
         }
       }
     };

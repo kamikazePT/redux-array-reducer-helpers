@@ -29,9 +29,9 @@ describe('bindIndexToActionCreators', () => {
     const expectedAction = {
       type : 'TEST_ACTION',
       payload : { 
-        index : {
-          value : index,
-          nextIndex
+        index,
+        nextIndex : {
+          index : nextIndex
         }
       }
     };
@@ -91,9 +91,9 @@ describe('bindIndexToActionCreators', () => {
     const index = 2;
     const nextIndex = 1;
     const expectedIndexProperty = {
-      index : {
-        value : index,
-        nextIndex
+      index,
+      nextIndex : {
+        index : nextIndex
       }
     };
 
