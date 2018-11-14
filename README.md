@@ -3,8 +3,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/kamikazePT/redux-reducer-array-helpers/badge.svg?branch=master)](https://coveralls.io/github/kamikazePT/redux-reducer-array-helpers?branch=master)
 [![Inline docs](http://inch-ci.org/github/kamikazePT/redux-reducer-array-helpers.svg?branch=master)](http://inch-ci.org/github/kamikazePT/redux-reducer-array-helpers)
 [![Hit Count](http://hits.dwyl.io/kamikazePT/redux-reducer-array-helpers.svg)](http://hits.dwyl.io/kamikazePT/redux-reducer-array-helpers)
-[![Build Dependencies](https://david-dm.org/kamikazePT/redux-reducer-array-helpers.svg)]
-[![Dev Dependencies](https://david-dm.org/kamikazePT/redux-reducer-array-helpers/dev-status.svg)]
+![Build Dependencies](https://david-dm.org/kamikazePT/redux-reducer-array-helpers.svg)
+![Dev Dependencies](https://david-dm.org/kamikazePT/redux-reducer-array-helpers/dev-status.svg)
 
 [![NPM](https://nodei.co/npm/redux-reducer-array-helpers.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/redux-reducer-array-helpers/)
 
