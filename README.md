@@ -45,8 +45,6 @@ color list reducer handler
 import { unbindIndexToReducer } from 'redux-array-reducer-helpers'
 
   function doToggleColorHandler(state, action) {
-    const { index } = action;
-
     const newColors = unbindIndexToReducer(colorItemReducer)(state.colors, action);
 
     return { ...state, colors: newColors };
