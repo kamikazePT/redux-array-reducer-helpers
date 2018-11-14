@@ -3,7 +3,7 @@ import unbindIndexToReducer from '@/unbinders/unbind_index_to_reducer';
 describe('unbindIndexToReducer', () => {
   it('It should parse single index on reducer', () => {
     const index = 0;
-    const key = 'myIndexKey'
+    const key = 'myIndexKey';
 
     const action = {
       type : 'TEST_ACTION',
@@ -38,8 +38,8 @@ describe('unbindIndexToReducer', () => {
   it('It should parse index on reducer whem multiple found', () => {
     const index = 0;
     const nextIndex = 1;
-    const key = 'myIndexKey'
-    const nextKey = 'myNextIndexKey'
+    const key = 'myIndexKey';
+    const nextKey = 'myNextIndexKey';
 
     const action = {
       type : 'TEST_ACTION',

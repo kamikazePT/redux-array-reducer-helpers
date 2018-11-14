@@ -15,9 +15,9 @@
     "injection"
   ],
   "scripts": {
-    "lint": "node_modules\\.bin\\eslint . --ext .js",
+    "lint": "yarn gulp lint",
     "compile": "yarn gulp compile",
-    "babel": "node node_modules\\babel-cli\\bin\\babel.js src --out-dir lib\\src",
+    "babel": "yarn gulp babel",
     "test": "yarn gulp test"
   },
   "dependencies": {
@@ -36,6 +36,7 @@
     "gulp": "^3.9.1",
     "husky": "^1.1.4",
     "jest": "^23.6.0",
+    "path": "^0.12.7",
     "shelljs": "^0.8.3",
     "yargs": "^12.0.2"
   }

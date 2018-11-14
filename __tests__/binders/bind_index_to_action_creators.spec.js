@@ -7,7 +7,7 @@ describe('bindIndexToActionCreators', () => {
     });
 
     const index = 2;
-    const key = 'myIndexKey'
+    const key = 'myIndexKey';
 
     const expectedAction = {
       type : 'TEST_ACTION',
@@ -31,9 +31,9 @@ describe('bindIndexToActionCreators', () => {
     });
 
     const index = 2;
-    const key = 'myIndexKey'
+    const key = 'myIndexKey';
     const nextIndex = 1;
-    const nextKey = 'myNextIndexKey'
+    const nextKey = 'myNextIndexKey';
 
     const expectedAction = {
       type : 'TEST_ACTION',
@@ -67,7 +67,7 @@ describe('bindIndexToActionCreators', () => {
     };
 
     const index = 2;
-    const key = 'myIndexKey'
+    const key = 'myIndexKey';
 
     const expectedActions = [
       {
