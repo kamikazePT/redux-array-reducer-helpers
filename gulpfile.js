@@ -3,9 +3,14 @@ const path = require('path');
 const shell = require('shelljs');
 const argv = require('yargs').argv;
 
+gulp.task('coverage', () => {
+  shell.exec(`${path.normalize('node_modules/.bin/jest')} --coverage && cat ${path.normalize('coverage/lcov.info')} ${path.normalize('node_modules/.bin/coveralls')}`);
+});
+
+
 gulp.task('lint', () => {
   const args = argv.watch ? '--watch' : '';
-  shell.exec(`${path.normalize('node_modules\\.bin\\eslint')} . --ext .js" ${args}`);
+  shell.exec(`${path.normalize('node_modules/.bin/eslint')} . --ext .js" ${args}`);
 });
 
 gulp.task('babel', () => {

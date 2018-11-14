@@ -9,3 +9,6 @@ node_modules
 
 #binaries
 lib
+
+#coverage
+coverage

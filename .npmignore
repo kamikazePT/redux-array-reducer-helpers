@@ -6,6 +6,7 @@ node_modules
 
 #tests
 __tests__
+coverage
 
 #dev files
 src

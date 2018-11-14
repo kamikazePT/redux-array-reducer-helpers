@@ -15,6 +15,7 @@
     "injection"
   ],
   "scripts": {
+    "coverage" : "yarn gulp coverage",
     "lint": "yarn gulp lint",
     "compile": "yarn gulp compile",
     "babel": "yarn gulp babel",
@@ -30,6 +31,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
+    "coveralls": "^3.0.2",
     "eslint": "^5.9.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^22.0.0",
