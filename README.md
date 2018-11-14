@@ -47,7 +47,7 @@ import { bindIndexToActionCreators } from 'redux-array-reducer-helpers'
 import { doToggleColor } from 'actions/button_actions'
 
 ... etc
-bindIndexToActionCreators(doToggleColor, index)
+bindIndexToActionCreators(doToggleColor, { colors : index })
 ... etc
 
 ```
@@ -57,7 +57,7 @@ color list reducer handler
 import { unbindIndexToReducer } from 'redux-array-reducer-helpers'
 
   function doToggleColorHandler(state, action) {
-    const newColors = unbindIndexToReducer(colorItemReducer)(state.colors, action);
+    const newColors = unbindIndexToReducer(colorItemReducer, 'colors')(state.colors, action);
 
     return { ...state, colors: newColors };
   }
