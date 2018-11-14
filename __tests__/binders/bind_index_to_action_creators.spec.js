@@ -7,36 +7,48 @@ describe('bindIndexToActionCreators', () => {
     });
 
     const index = 2;
+    const key = 'myIndexKey'
 
     const expectedAction = {
       type : 'TEST_ACTION',
-      payload : { index }
+      payload : { 
+        indexes : {
+          [key] : index
+        }
+      }
     };
 
-    const boundActionCreator = bindIndexToActionCreators(actionCreator, index);
+    const boundActionCreator = bindIndexToActionCreators(actionCreator, {
+      [key] : index
+    });
 
     expect(boundActionCreator()).toEqual(expectedAction);
   });
 
-  it('It should inject nested index property on simple action creator', () => {
+  it('It should inject multiple index property on simple action creator', () => {
     const actionCreator = () => ({
       type : 'TEST_ACTION'
     });
 
     const index = 2;
+    const key = 'myIndexKey'
     const nextIndex = 1;
+    const nextKey = 'myNextIndexKey'
 
     const expectedAction = {
       type : 'TEST_ACTION',
       payload : { 
-        index,
-        nextIndex : {
-          index : nextIndex
+        indexes : {
+          [key] : index,
+          [nextKey] : nextIndex
         }
       }
     };
 
-    const boundActionCreator = bindIndexToActionCreators(bindIndexToActionCreators(actionCreator, index), nextIndex);
+    const boundActionCreator = bindIndexToActionCreators(actionCreator, {
+      [key] : index,
+      [nextKey] : nextIndex
+    });
 
     expect(boundActionCreator()).toEqual(expectedAction);
   });
@@ -55,63 +67,33 @@ describe('bindIndexToActionCreators', () => {
     };
 
     const index = 2;
+    const key = 'myIndexKey'
 
     const expectedActions = [
       {
         type : 'TEST_ACTION_ONE',
-        payload : { index }
+        payload : { 
+          indexes : {
+            [key] : index
+          } 
+        }
       },
       {
         type : 'TEST_ACTION_TWO',
-        payload : { index }
+        payload : { 
+          indexes : {
+            [key] : index
+          } 
+        }
       }
     ];
 
     let currentIdx = 0;
     const assertDispatch = (action) => expect(action).toEqual(expectedActions[currentIdx++]);
 
-    const boundActionCreator = bindIndexToActionCreators(thunkActionCreator, index);
-
-    boundActionCreator()(assertDispatch);
-  });
-
-  it('It should inject nested index property in multiple dispatched actions from thunk action creator', () => {
-    const thunkActionCreator = () => {
-      return (dispatch) => {
-        dispatch({
-          type : 'TEST_ACTION_ONE'
-        });
-
-        dispatch({
-          type : 'TEST_ACTION_TWO'
-        });
-      };
-    };
-
-    const index = 2;
-    const nextIndex = 1;
-    const expectedIndexProperty = {
-      index,
-      nextIndex : {
-        index : nextIndex
-      }
-    };
-
-    const expectedActions = [
-      {
-        type : 'TEST_ACTION_ONE',
-        payload : expectedIndexProperty
-      },
-      {
-        type : 'TEST_ACTION_TWO',
-        payload : expectedIndexProperty
-      }
-    ];
-
-    let currentIdx = 0;
-    const assertDispatch = (action) => expect(action).toEqual(expectedActions[currentIdx++]);
-
-    const boundActionCreator = bindIndexToActionCreators(bindIndexToActionCreators(thunkActionCreator, index), nextIndex);
+    const boundActionCreator = bindIndexToActionCreators(thunkActionCreator, {
+      [key] : index
+    });
 
     boundActionCreator()(assertDispatch);
   });
