@@ -10,7 +10,11 @@ __tests__
 #dev files
 src
 .gitignore
-.flowconfig
+.travis.yml
+gulpfile.js
+.babelrc
+.huskyrc
+jest.config.js
 .npmignore
 .gitattributes
 .eslintignore

@@ -1,4 +1,15 @@
+[![npm version](https://badge.fury.io/js/redux-reducer-array-helpers.svg)](https://badge.fury.io/js/redux-reducer-array-helpers)
 [![Inline docs](http://inch-ci.org/github/kamikazePT/redux-reducer-array-helpers.svg?branch=master)](http://inch-ci.org/github/kamikazePT/redux-reducer-array-helpers)
+[![Coverage Status](https://coveralls.io/repos/github/kamikazePT/redux-reducer-array-helpers/badge.svg?branch=master)](https://coveralls.io/github/kamikazePT/redux-reducer-array-helpers?branch=master)
+[![HitCount](http://hits.dwyl.io/kamikazePT/redux-reducer-array-helpers.svg)](http://hits.dwyl.io/kamikazePT/redux-reducer-array-helpers)
+[![Dependencies](https://david-dm.org/kamikazePT/redux-reducer-array-helpers.svg)]
+(http://hits.dwyl.io/kamikazePT/redux-reducer-array-helpers)
+[![Dev Dependencies](https://david-dm.org/kamikazePT/redux-reducer-array-helpers/dev-status.svg)]
+(http://hits.dwyl.io/kamikazePT/redux-reducer-array-helpers?type=dev)
+
+[![NPM](https://nodei.co/npm/redux-reducer-array-helpers.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/redux-reducer-array-helpers/)
+
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/kamikazePT/redux-reducer-array-helpers/issues)
 
 ### Installation
 
