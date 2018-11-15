@@ -9,7 +9,7 @@ __tests__
 coverage
 
 #dev files
-src
+/src
 .gitignore
 .travis.yml
 gulpfile.js
