@@ -1,8 +1,8 @@
 {
   "name": "redux-reducer-array-helpers",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "redux helpers for arrays in reducers",
-  "main": "./lib/index.js",
+  "main": "./lib/src/index.js",
   "repository": "github:kamikazePT/redux-reducer-array-helpers",
   "homepage": "https://github.com/kamikazePT/redux-reducer-array-helpers#readme",
   "author": "Afonso Santos aka kamikazePT",
