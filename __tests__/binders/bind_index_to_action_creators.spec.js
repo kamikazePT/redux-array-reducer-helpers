@@ -97,4 +97,25 @@ describe('bindIndexToActionCreators', () => {
 
     boundActionCreator()(assertDispatch);
   });
+
+  it('It should inject index property on simple action creator by only passing a key', () => {
+    const actionCreator = () => ({
+      type : 'TEST_ACTION'
+    });
+
+    const key = 'myIndexKey';
+
+    const expectedAction = {
+      type : 'TEST_ACTION',
+      payload : { 
+        indexes : {
+          [key] : key
+        }
+      }
+    };
+
+    const boundActionCreator = bindIndexToActionCreators(actionCreator, key);
+
+    expect(boundActionCreator()).toEqual(expectedAction);
+  });
 });
