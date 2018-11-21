@@ -28,6 +28,10 @@ The idea here is to have the action unchanged and wrap it into another action cr
 
 It also supports multiple dispatches (for example in a thunk action used with redux-thunk)
 
+CHANGELOG
+
+V3 : Added support for named keys besides index keys (examples below)
+
 ### Example
 
 action creator
@@ -39,23 +43,66 @@ export function doToggleColor() {
 }
 ```
 
+####Numeric Index Usage
+
 injection
 ```
 import { bindIndexToActionCreators } from 'redux-array-reducer-helpers'
 import { doToggleColor } from 'actions/button_actions'
 
-... etc
+// index = 2 // Example
+//... etc
 bindIndexToActionCreators(doToggleColor, { colors : index })
-... etc
+//... etc
 
 ```
 
 color list reducer handler
 ```
+//state.colors = [someColorObj, someColorObj]
+// colorItemReducer = reducer that handles one someColorObj
+
+
 import { unbindIndexToReducer } from 'redux-array-reducer-helpers'
 
   function doToggleColorHandler(state, action) {
     const newColors = unbindIndexToReducer(colorItemReducer, 'colors')(state.colors, action);
+
+    return { ...state, colors: newColors };
+  }
+
+```
+
+####Named Index Usage
+
+injection
+```
+import { bindIndexToActionCreators } from 'redux-array-reducer-helpers'
+import { doToggleColor } from 'actions/button_actions'
+
+//... etc
+bindIndexToActionCreators(doToggleColor, 'redColor')
+//... etc
+
+```
+
+color group (it's not a list anymore...) reducer handler
+```
+//state.colors = { redColor : someColorObj, blueColor : someColorObj }
+// colorItemReducer = reducer that handles one someColorObj
+
+import { unbindIndexToReducer } from 'redux-array-reducer-helpers'
+
+  function doToggleRedColorHandler(state, action) {
+    const newColors = unbindIndexToReducer(colorItemReducer, 'redColor')(state.colors, action);
+
+    return { ...state, colors: newColors };
+  }
+```
+  or generic usage (this will assume the indexes property on action payload only contains named indexes)
+```
+  function doToggleColorHandler(state, action) {
+    const newColors = unbindIndexToReducer(colorItemReducer)(state.colors, action);
 
     return { ...state, colors: newColors };
   }
