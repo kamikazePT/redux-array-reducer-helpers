@@ -15,8 +15,8 @@
 install 
 
 ```sh
-$ npm i redux-array-reducer-helpers 
-$ yarn add redux-array-reducer-helpers
+$ npm i redux-reducer-array-helpers 
+$ yarn add redux-reducer-array-helpers
 ```
 
 ### Motivation
