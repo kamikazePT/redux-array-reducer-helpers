@@ -1,6 +1,6 @@
 {
   "name": "redux-reducer-array-helpers",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "redux helpers for arrays in reducers",
   "main": "./lib/src/index.js",
   "repository": "github:kamikazePT/redux-reducer-array-helpers",
@@ -22,7 +22,8 @@
     "test": "yarn gulp test"
   },
   "dependencies": {
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "redux-create-reducer": "^1.1.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
