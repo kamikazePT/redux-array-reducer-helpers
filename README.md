@@ -47,7 +47,7 @@ Reducer creator
  * @param {string} [options.key] - key to fetch the index
  * @returns the mapped reducer that handles the types for sliced index state
  */
-function indexedReducer(wrappedReducer, key)
+function indexedReducer(wrappedReducer, actionTypes, options)
 ```
 
 Reducer action type handler
